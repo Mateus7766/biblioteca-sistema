@@ -10,50 +10,36 @@ typedef struct
     float multas;
 } Livro;
 
-void mostrarMenu()
-{
-    printf("\n===== GESTAO DE ESTOQUE =====\n");
-    printf("1 - Cadastrar produtos\n");
-    printf("2 - Adicionar estoque\n");
-    printf("3 - Retirar estoque\n");
-    printf("4 - Exibir relatorio\n");
-    printf("0 - Sair\n");
-    printf("Escolha uma opcao: ");
-}
-
-void cadastrarLivros(Livro livros[], int *total);
-void registrarEmprestimo();
-void consultarLivros();
-float calcularMulta(int diasAtraso);
-
 int main()
 {
+    Livro livros[4];
+    int total = 0;
     int opcao;
     do
     {
-        exibirMenu();
+        // exibirMenu();
         scanf("%d", &opcao);
 
         switch (opcao)
         {
         case 1:
-            cadastrarLivros();
+            // cadastrarLivros(livros, &total);
             break;
 
         case 2:
-            registrarEmprestimo();
+            // registrarEmprestimo(livros, total);
             break;
 
         case 3:
-            registrarDevolucao();
+            // registrarDevolucao(livros, total);
             break;
 
         case 4:
-            consultarLivros();
+            // consultarLivros(livros, total);
             break;
 
         case 5:
-            relatorioGeral();
+            // relatorioGeral(livros, total);
             break;
 
         case 0:
@@ -65,10 +51,6 @@ int main()
         }
 
     } while (opcao != 0);
-}
 
-float calcularMulta(int diasAtraso) {
-    int multa;
-    multa = diasAtraso * 2;
-    return multa;
+    return 0;
 }
