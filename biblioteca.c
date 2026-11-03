@@ -10,6 +10,13 @@ typedef struct
     float multas;
 } Livro;
 
+void exibirMenu();
+void cadastrarLivros(Livro livros[], int *total);
+void registrarEmprestimo(Livro livros[], int total);
+void registrarDevolucao(Livro livros[], int total);
+void consultarLivros(Livro livros[], int total);
+void relatorioGeral(Livro livros[], int total);
+
 int main()
 {
     Livro livros[4];
@@ -17,29 +24,29 @@ int main()
     int opcao;
     do
     {
-        // exibirMenu();
+        exibirMenu();
         scanf("%d", &opcao);
 
         switch (opcao)
         {
         case 1:
-            // cadastrarLivros(livros, &total);
+            cadastrarLivros(livros, &total);
             break;
 
         case 2:
-            // registrarEmprestimo(livros, total);
+            registrarEmprestimo(livros, total);
             break;
 
         case 3:
-            // registrarDevolucao(livros, total);
+            registrarDevolucao(livros, total);
             break;
 
         case 4:
-            // consultarLivros(livros, total);
+            consultarLivros(livros, total);
             break;
 
         case 5:
-            // relatorioGeral(livros, total);
+            relatorioGeral(livros, total);
             break;
 
         case 0:
